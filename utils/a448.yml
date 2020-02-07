@@ -9,6 +9,7 @@ dependencies:
   - jupytext
   - scipy
   - matplotlib
+  - cartopy
   - pyflakes
   - black
   - click

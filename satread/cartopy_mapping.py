@@ -1,7 +1,8 @@
 # ---
 # jupyter:
 #   jupytext:
-#   formats: ipynb:py:percent
+#     cell_metadata_filter: -all
+#     notebook_metadata_filter: all,-language_info,-toc,-latex_envs
 #     text_representation:
 #       extension: .py
 #       format_name: percent
@@ -53,26 +54,21 @@
 # **The cell below uses [context.py](https://github.com/phaustin/a301_code/blob/master/notebooks/context.py) to find
 #      the path to data_dir.  It is held in the variable context.data_dir**
 # %%
-from context import data_dir
-
-from a301.utils.data_read import download
-
-read_data = False
-if read_data:
-    filename = "MYD021KM.A2013222.2105.061.2018047235850.hdf"
-    download(filename)
-    local_file = Path.cwd() / Path(filename)
-    to_file = data_dir / Path(filename)
-    local_file.rename(to_file)
+import context
+modis_image = context.modis_sat
+print(modis_image)
 
 # %% [markdown]
 # **This cell sets up the datum and the LAEA projection, with the tangent point at the North Pole and the central meridian at -90 degrees west of Greenwich**
 
 # %%
+from satcode.data_read import download
+download(modis_image.name, dest_folder = context.data_dir)
+
+# %%
 import cartopy.crs as ccrs
 import matplotlib.pyplot as plt
 import cartopy
-from pathlib import Path
 import pprint
 import numpy as np
 
@@ -147,19 +143,12 @@ print(van_x, van_y)
 #
 # <img src="images/myd2105.jpg" width=400>
 #
-#
-
-# %% [markdown]
-# **The cell below uses
 
 # %%
-# %matplotlib inline
-from a301.scripts.modismeta_read import parseMeta
-import context
+from satcode.modismeta_read import parseMeta
 
-data_dir = Path(context.data_dir)
-modis_file = list(data_dir.glob("MYD02*2105*hdf"))[0]
-modis_dict = parseMeta(modis_file)
+
+modis_dict = parseMeta(modis_image)
 
 # %%
 pprint.pprint(modis_dict)

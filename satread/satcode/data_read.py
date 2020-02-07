@@ -30,22 +30,10 @@ import argparse
 import requests
 from pathlib import Path
 import shutil
-import a500
-import pandas as pd
-import pdb
-
 
 class NoDataException(Exception):
     pass
 
-
-def read_soundings():
-    soundings_folder = a500.test_dir / Path("soundings")
-    sounding_files = list(soundings_folder.glob("*csv"))
-    sound_dict = {}
-    for item in sounding_files:
-        sound_dict[item.stem] = pd.read_csv(item)
-    return sound_dict
 
 
 def download(
@@ -75,7 +63,9 @@ def download(
 
     Side effect: Creates a copy of that file in the local directory
     """
-    url = "{}/{}".format(root, filename)
+    filename = Path(filename)
+    name_only = filename.name
+    url = f"{root}/{name_only}"
     url = url.replace("\\", "/")
     print("trying {}".format(url))
     #
@@ -89,9 +79,7 @@ def download(
     #
     # filename may contain subfolders
     #
-    filepath = Path(filename)
-    filename = filepath.name
-    filepath = dest_path / Path(filename)
+    filepath = dest_path / Path(filename.name)
     print(f"writing to: {filepath}")
     if filepath.exists():
         the_size = filepath.stat().st_size
