@@ -4,11 +4,11 @@
 * [Project board](https://github.com/users/phaustin/projects/2)
 * [web of science](https://resources.library.ubc.ca/277)
 
-
 ## Python resources
 
 * [programming for data science](https://www.tomasbeuzen.com/python-programming-for-data-science/README.html)
 * [coding for economists](https://aeturrell.github.io/coding-for-economists/code-basics.html)
+* [EOSC 211 website](https://phaustin.github.io/eosc211_students/announcements.html)
 
 ## Article links
 
