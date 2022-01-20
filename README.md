@@ -15,7 +15,8 @@
 ### Remote sensing
 
 * [CO2 monitoring during lockdown](https://www.nature.com/articles/s41467-020-18922-7)
-* [contrails](https://dspace.mit.edu/handle/1721.1/124179)
+* [contrail deep learning](https://dspace.mit.edu/handle/1721.1/124179)
+* [contrail database](https://www.climatechange.ai/papers/icml2021/2/paper.pdf)
 
 ### Climate models
 
