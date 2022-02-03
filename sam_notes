@@ -1,0 +1,7 @@
+
+1) find GOES 16 image with lots of contrails
+2) Use GOES package to get netcdf ABI image with 12.3 and 10.4 micron wavelenghts
+3) find the BTD to identify ship tracks
+4) Download the ERA 40 reanalysis for that day and time
+5) plot RH, Temp, shear at flightlevel
+6) loop
