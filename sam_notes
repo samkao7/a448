@@ -10,8 +10,13 @@
 
 02-04-22 
 Got GOES-16 data downloaded for July 27th and plotted around Atlanta
+Used G16_WV__SR_plot to plot, this plots ABI Band 8 6.2 microMeters
+
 Need to figure out which bands and colour compositions to plot to view contrails
 Also need to find what time/conditions is needed for most contrails to be visible
 
+USEFUL LINKS:
 https://satelliteliaisonblog.com/2017/04/13/goes-16-contrails-in-the-southwest-on-041017/
+
+https://cimss.ssec.wisc.edu/satellite-blog/archives/26401
 
